@@ -3,8 +3,8 @@
 
 use serde::Deserialize;
 use std::collections::HashMap;
-// use wmi::{COMLibrary, Variant, WMIConnection, WMIDateTime};
-use wmi::{COMLibrary, Variant, WMIConnection};
+use wmi::{COMLibrary, Variant, WMIConnection, WMIDateTime};
+// use wmi::{COMLibrary, Variant, WMIConnection};
 // use wmi::COMLibrary;
 // use wmi::Variant;
 // use wmi::WMIConnection;
@@ -34,7 +34,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         Debug: bool,
         EncryptionLevel: u32,
         ForegroundApplicationBoost: u8,
-        // LastBootUpTime: WMIDateTime,
+        LastBootUpTime: WMIDateTime,
     }
 
     let results: Vec<Win32_OperatingSystem> = wmi_con.query()?;
